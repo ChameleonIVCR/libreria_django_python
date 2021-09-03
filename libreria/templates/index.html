@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Libreria</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'index.css' %}">
+    </head>
+    <body>
+        <div class="contenedor_tabla">
+            <table>
+                <!-- Cabecera -->
+                <tr>
+                    <th>ID</th>
+                    <th>Titulo</th>
+                    <th>Genero</th>
+                    <th>Autor</th>
+                    <th>Publicacion</th>
+                </tr>
+                 {% for libro in libros %}
+                <tr>
+                     <td>{{ libro.pk }}</td>
+                     <td>{{ libro.titulo }}</td>
+                     <td>{{ libro.genero }}</td>
+                     <td>{{ libro.autor }}</td>
+                     <td>{{ libro.publicacion }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>
